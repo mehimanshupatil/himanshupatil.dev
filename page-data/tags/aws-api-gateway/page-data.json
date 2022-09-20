@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-tag-query-tsx",
+    "path": "/tags/aws-api-gateway",
+    "result": {"data":{"allPost":{"nodes":[{"slug":"/programmatically-convert-api-gateway-sync-invoke-lambda-to-async","title":"Programmatically convert api gateway sync invoke lambda to async","date":"26.03.2022","excerpt":"","timeToRead":1,"description":"code to modify api gateway to invoke lambda function async","tags":[{"name":"AWS-api-gateway","slug":"aws-api-gateway"},{"name":"AWS-lambda","slug":"aws-lambda"},{"name":"SAM","slug":"sam"}]}]}},"pageContext":{"slug":"aws-api-gateway","name":"AWS-api-gateway","formatString":"DD.MM.YYYY"}},
+    "staticQueryHashes": ["2744905544","3090400250","318001574"]}
