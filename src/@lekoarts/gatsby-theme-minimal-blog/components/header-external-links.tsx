@@ -2,7 +2,7 @@
 import useMinimalBlogConfig from '@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config';
 import * as React from 'react';
 import { jsx, Link as TLink } from 'theme-ui';
-
+ 
 const HeaderExternalLinks = () => {
   const { externalLinks } = useMinimalBlogConfig();
 
