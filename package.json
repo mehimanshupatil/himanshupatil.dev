@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "personal-website",
+  "name": "himanshupatil.dev",
   "description": "Personal Blog and Website of Himanshu Patil",
   "version": "1.0.0",
   "scripts": {
@@ -20,13 +20,16 @@
     "gatsby-plugin-feed": "^5.4.0",
     "gatsby-plugin-gatsby-cloud": "^5.4.0",
     "gatsby-plugin-manifest": "^5.4.0",
+    "gatsby-plugin-sass": "^6.13.1",
     "gatsby-plugin-sitemap": "^6.4.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.22",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.70.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^6.1.1"
   }
 }
