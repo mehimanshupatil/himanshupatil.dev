@@ -1,8 +1,11 @@
  @use "sass:math";
 
  .scrolling-words-container {
-   display: flex;
-   align-items: center;
+   display: inline-flex;
+
+   &:hover>.scrolling-words-box {
+     overflow: unset;
+   }
  }
 
  $height: 78px;
@@ -63,7 +66,7 @@
 
      li {
        display: flex;
-       align-items: center; 
+       align-items: center;
        height: $height;
        list-style: none;
      }
