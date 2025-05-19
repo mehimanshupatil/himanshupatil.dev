@@ -1,0 +1,207 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     transition: all 4s ease;
+ }
+
+ html {
+     font-family: system-ui, sans-serif;
+ }
+
+ body {
+     margin: 0;
+     padding: 0;
+ }
+
+ main {
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ :root[data-theme="dark"] {
+     --bg-color: #1a1a1a;
+     --text-color: #ffffff;
+     --secondary-color: #a0a0a0;
+     --border-color: #333333;
+     --button-bg: #333333;
+     --button-text: #ffffff;
+     --button-border: #444444;
+     --button-hover: #444444;
+ }
+
+ :root[data-theme="light"] {
+     --bg-color: #ffffff;
+     --text-color: #000000;
+     --secondary-color: #666666;
+     --border-color: #e0e0e0;
+     --button-bg: #ffffff;
+     --button-text: #000000;
+     --button-border: #000000;
+     --button-hover: #000000;
+ }
+
+ body {
+     background-color: var(--bg-color);
+     color: var(--text-color);
+     transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .theme-toggle {
+     position: fixed;
+     top: 1rem;
+     right: 1rem;
+     z-index: 100;
+     background: none;
+     border: none;
+     font-size: 1.5rem;
+     cursor: pointer;
+     padding: 0.5rem;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: transform 0.3s ease;
+
+     &:hover {
+         transform: scale(1.1);
+     }
+ }
+
+
+ .steps {
+     position: fixed;
+     bottom: 1rem;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+     gap: 0.5rem;
+     z-index: 100;
+     width: auto;
+
+     .step-btn {
+         padding: 0.75rem 1rem;
+         border: 1px solid var(--button-border);
+         background: var(--button-bg);
+         color: var(--button-text);
+         cursor: pointer;
+         transition: all 0.3s ease;
+         border-radius: 0.5rem;
+         font-size: 0.875rem;
+         white-space: nowrap;
+
+         &.active {
+             background: var(--button-hover);
+             color: var(--button-bg);
+         }
+     }
+ }
+
+ .with-styles {
+     background: var(--bg-color);
+
+     .container {
+         width: 100%;
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 1rem;
+     }
+
+     .hero {
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         padding: 2rem 0;
+     }
+
+     h1 {
+         font-size: clamp(2rem, 8vw, 4rem);
+         margin-bottom: 0.5rem;
+         color: var(--text-color);
+     }
+
+     .role {
+         margin-bottom: 1.5rem;
+         font-size: clamp(1rem, 4vw, 1.5rem);
+         color: var(--secondary-color);
+     }
+
+     .links {
+         display: flex;
+         flex-direction: column;
+         gap: 1.5rem;
+         align-items: center;
+     }
+
+     .social {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 0.75rem;
+
+         a {
+             padding: 0.75rem 1rem;
+             border: 1px solid var(--border-color);
+             border-radius: 1.5rem;
+             text-decoration: none;
+             color: var(--text-color);
+             transition: all 0.3s ease;
+             font-size: 0.875rem;
+
+             &:hover {
+                 background: var(--button-hover);
+                 color: var(--button-bg);
+             }
+         }
+     }
+
+     h1 {
+         font-weight: 700;
+         background: linear-gradient(135deg, var(--text-color) 0%, var(--secondary-color) 100%);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+     }
+
+     .link {
+         font-size: 1rem;
+         color: var(--text-color);
+         text-decoration: none;
+         transition: color 0.3s ease;
+
+         &:hover {
+             color: var(--secondary-color);
+         }
+     }
+
+
+
+ }
+
+ .with-animations {
+     background: transparent;
+
+     h1,
+     .role,
+     .link,
+     .social {
+         position: relative;
+         z-index: 1;
+     }
+ }
+
+
+ @media (max-width: 768px) {
+     .steps {
+         flex-direction: column;
+         width: calc(100% - 2rem);
+         max-width: 300px;
+
+         .step-btn {
+             width: 100%;
+             text-align: center;
+         }
+     }
+ }

@@ -1,35 +1,25 @@
 {
-  "private": true,
   "name": "himanshupatil.dev",
   "description": "Personal Blog and Website of Himanshu Patil",
+  "type": "module",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
-    "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@lekoarts/gatsby-theme-minimal-blog": "^6.0.4",
-    "gatsby": "^5.4.2",
-    "gatsby-omni-font-loader": "^2.0.0",
-    "gatsby-plugin-feed": "^5.4.0",
-    "gatsby-plugin-gatsby-cloud": "^5.4.0",
-    "gatsby-plugin-manifest": "^5.4.0",
-    "gatsby-plugin-sass": "^6.13.1",
-    "gatsby-plugin-sitemap": "^6.4.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.22",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "sass": "^1.70.0"
+    "@astrojs/react": "^4.2.7",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "astro": "^5.2.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "^0.176.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "gh-pages": "^6.1.1"
+    "sass-embedded": "^1.89.0"
   }
 }
