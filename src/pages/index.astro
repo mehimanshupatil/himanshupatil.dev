@@ -2,9 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { StepDemo } from '../components/StepDemo';
 
-const step = Astro.url.searchParams.get('step') || '1';
 ---
 
 <Layout>
-  <StepDemo client:load initialStep={step} />
+  <StepDemo client:load   />
 </Layout>

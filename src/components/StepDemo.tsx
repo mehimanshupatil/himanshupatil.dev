@@ -4,12 +4,9 @@ import { Step2Styled } from './Step2Styled';
 import { Step3Animated } from './Step3Animated';
 import './styles.scss';
 
-interface StepDemoProps {
-  initialStep?: string;
-}
 
-export const StepDemo: React.FC<StepDemoProps> = ({ initialStep = '1' }) => {
-  const [step, setStep] = useState(initialStep);
+export const StepDemo: React.FC = () => {
+  const [step, setStep] = useState('1');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
@@ -28,23 +25,13 @@ export const StepDemo: React.FC<StepDemoProps> = ({ initialStep = '1' }) => {
     localStorage.setItem('theme', newTheme);
   };
 
-  const getStepTitle = () => {
-    switch (step) {
-      case '2':
-        return 'Step 2: Adding CSS Styles';
-      case '3':
-        return 'Step 3: Adding JavaScript Animations';
-      default:
-        return 'Step 1: Basic HTML Structure';
-    }
-  };
 
   const renderStep = () => {
     switch (step) {
       case '2':
         return <Step2Styled />;
       case '3':
-        return <Step3Animated />;
+        return <Step3Animated theme={theme} />;
       default:
         return <Step1Basic />;
     }
