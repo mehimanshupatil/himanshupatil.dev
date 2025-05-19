@@ -29,7 +29,7 @@ export const StepDemo: React.FC<StepDemoProps> = ({ initialStep = '1' }) => {
   };
 
   const getStepTitle = () => {
-    switch(step) {
+    switch (step) {
       case '2':
         return 'Step 2: Adding CSS Styles';
       case '3':
@@ -40,7 +40,7 @@ export const StepDemo: React.FC<StepDemoProps> = ({ initialStep = '1' }) => {
   };
 
   const renderStep = () => {
-    switch(step) {
+    switch (step) {
       case '2':
         return <Step2Styled />;
       case '3':
@@ -57,25 +57,25 @@ export const StepDemo: React.FC<StepDemoProps> = ({ initialStep = '1' }) => {
       </button>
       {renderStep()}
       <nav className="steps">
-        <button 
-          onClick={() => setStep('1')} 
+        <button
+          onClick={() => setStep('1')}
           className={`step-btn ${step === '1' ? 'active' : ''}`}
         >
           Step 1: HTML
         </button>
-        <button 
-          onClick={() => setStep('2')} 
+        <button
+          onClick={() => setStep('2')}
           className={`step-btn ${step === '2' ? 'active' : ''}`}
         >
           Step 2: CSS
         </button>
-        <button 
-          onClick={() => setStep('3')} 
+        <button
+          onClick={() => setStep('3')}
           className={`step-btn ${step === '3' ? 'active' : ''}`}
         >
           Step 3: JavaScript
         </button>
       </nav>
-  </>
+    </>
   );
 };
