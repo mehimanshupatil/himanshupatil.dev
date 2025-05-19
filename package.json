@@ -1,5 +1,6 @@
 {
-  "name": "himanshu-patil-portfolio",
+  "name": "himanshupatil.dev",
+  "description": "Personal Blog and Website of Himanshu Patil",
   "type": "module",
   "version": "1.0.0",
   "private": true,

@@ -1,0 +1,110 @@
+ @use "sass:math";
+
+ .scrolling-words-container {
+   display: inline-flex;
+
+   &:hover>.scrolling-words-box {
+     overflow: unset;
+   }
+ }
+
+ $height: 78px;
+
+ .scrolling-words-box {
+   height: $height;
+   overflow: hidden;
+
+   &.emojis {
+     ul {
+       animation: scrollUpEmojis 20s infinite;
+
+       li {
+         animation-name: wobble;
+         animation-duration: 0.8s;
+         animation-iteration-count: infinite;
+         animation-timing-function: linear;
+         transform-origin: 50% 100%;
+
+         @keyframes wobble {
+           0% {
+             transform: none;
+           }
+
+           15% {
+             transform: rotate3d(0, 0, 1, -5deg);
+           }
+
+           30% {
+             transform: rotate3d(0, 0, 1, 3deg);
+           }
+
+           45% {
+             transform: rotate3d(0, 0, 1, -3deg);
+           }
+
+           60% {
+             transform: rotate3d(0, 0, 1, 2deg);
+           }
+
+           75% {
+             transform: rotate3d(0, 0, 1, -1deg);
+           }
+
+           100% {
+             transform: none;
+           }
+         }
+
+       }
+     }
+   }
+
+   ul {
+     margin: 0 0.625rem;
+     padding: 0;
+     animation: scrollUp 16s infinite;
+
+     li {
+       display: flex;
+       align-items: center;
+       height: $height;
+       list-style: none;
+     }
+   }
+ }
+
+
+ // Variables
+
+ @keyframes scrollUp {
+   $item-count: 21;
+
+   @for $i from 0 through ($item-count - 1) {
+     $percentage-start: $i * math.div(100%, $item-count);
+     $percentage-end: (
+       $i + 1) * math.div(100%, $item-count
+     );
+
+   #{$percentage-start},
+   #{$percentage-end} {
+     transform: translateY(calc((-100% / $item-count) * $i));
+   }
+ }
+ }
+
+
+ @keyframes scrollUpEmojis {
+   $item-count-emoji: 27;
+
+   @for $i from 0 through ($item-count-emoji - 1) {
+     $percentage-start: $i * math.div(100%, $item-count-emoji);
+     $percentage-end: (
+       $i + 1) * math.div(100%, $item-count-emoji
+     );
+
+   #{$percentage-start},
+   #{$percentage-end} {
+     transform: translateY(calc((-100% / $item-count-emoji) * $i));
+   }
+ }
+ }
