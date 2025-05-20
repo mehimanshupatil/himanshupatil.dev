@@ -50,12 +50,11 @@ const defaultParamsDark: GalaxyParams = {
 export const Step3Animated: React.FC<{ theme: 'light' | 'dark' }> = ({ theme }) => {
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  // const [parameters] = useState<GalaxyParams>(defaultParamsLight);
-
 
   useEffect(() => {
-    const parameters = theme === 'light' ? defaultParamsLight : defaultParamsDark;
     if (!canvasRef.current) return;
+    const parameters = theme === 'light' ? defaultParamsLight : defaultParamsDark;
+    const blending = theme === 'light' ? THREE.NormalBlending : AdditiveBlending;
 
     const textureLoader = new THREE.TextureLoader();
     const shape = textureLoader.load('/1.png');
@@ -86,7 +85,7 @@ export const Step3Animated: React.FC<{ theme: 'light' | 'dark' }> = ({ theme }) 
         size: parameters.size,
         depthWrite: false,
         sizeAttenuation: true,
-        blending: theme === 'light' ? THREE.NormalBlending : AdditiveBlending,
+        blending: blending,
         transparent: true,
         alphaMap: shape,
       });
@@ -135,7 +134,7 @@ export const Step3Animated: React.FC<{ theme: 'light' | 'dark' }> = ({ theme }) 
         size: parameters.size,
         depthWrite: false,
         sizeAttenuation: true,
-        blending: AdditiveBlending,
+        blending: blending,
         vertexColors: true,
         transparent: true,
         alphaMap: shape,
@@ -218,7 +217,7 @@ export const Step3Animated: React.FC<{ theme: 'light' | 'dark' }> = ({ theme }) 
           left: 0,
           width: '100%',
           height: '100%',
-          // opacity: 0.7
+          opacity: 0.7
         }}
       />
       <main className="main with-styles with-animations">
